@@ -4,7 +4,7 @@ templates:
   1d3f5f15-8128-4445-8de5-92365b7e54a8: !Template
     answer_choices: no ||| yes
     id: 1d3f5f15-8128-4445-8de5-92365b7e54a8
-    jinja: 'Does the following sentence make sense and use correct English? Please
+    jinja: 'Does the following sentence makes sense and uses correct English? Please
       answer {{"yes"}} or {{"no"}}.
 
       {{sentence}}
@@ -19,7 +19,7 @@ templates:
       metrics:
       - Accuracy
       original_task: true
-    name: Make sense yes no
+    name: Makes sense yes no
     reference: ''
   39a701ff-bb4b-48ac-8c0a-8c61bf0d4b8d: !Template
     answer_choices: No ||| Yes
@@ -40,10 +40,30 @@ templates:
       original_task: true
     name: is_this_correct
     reference: A sample glue template
+  5a09f9b0-895a-46c7-931b-d9f6060bce87: !Template
+    answer_choices: no ||| yes
+    id: 5a09f9b0-895a-46c7-931b-d9f6060bce87
+    jinja: 'A sentence is acceptable if it is grammatically correct and makes sense.
+      Is the following sentence acceptable? Select yes or no.
+
+      {{sentence}}
+
+      |||
+
+      {{ answer_choices[label] }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - en
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Is the sentence acceptable
+    reference: converting "following sentence acceptable" to a yes/no format
   6f49b860-9145-4fcb-b632-9faea39e254e: !Template
     answer_choices: no ||| yes
     id: 6f49b860-9145-4fcb-b632-9faea39e254e
-    jinja: 'I''m copy-editing a story for publication. It has the following sentence
+    jinja: 'I''m editing a story for publication, which has the following sentence
       in it:
 
       {{sentence}}
@@ -63,39 +83,19 @@ templates:
       original_task: true
     name: editing
     reference: ''
-  79b4c04c-c0e2-4add-a600-d5572da192e7: !Template
-    answer_choices: unacceptable ||| acceptable
-    id: 79b4c04c-c0e2-4add-a600-d5572da192e7
-    jinja: 'The following sentence is either "{{"acceptable"}}", meaning it is grammatically
-      correct and makes sense, or "{{"unacceptable"}}". Which is it?
-
-      {{sentence}}
-
-      |||
-
-      {{ answer_choices[label] }}'
-    metadata: !TemplateMetadata
-      choices_in_prompt: true
-      languages:
-      - en
-      metrics:
-      - Accuracy
-      original_task: true
-    name: Following sentence acceptable
-    reference: ''
   dd33f089-57a1-452b-8bd5-8f1fffd10b60: !Template
     answer_choices: no ||| yes
     id: dd33f089-57a1-452b-8bd5-8f1fffd10b60
     jinja: '{{sentence}}
 
       I''m worried that sentence didn''t make any sense, or was grammatically incorrect.
-      Was it correct?
+      Was it correct? yes or no.
 
       |||
 
       {{ answer_choices[label] }}'
     metadata: !TemplateMetadata
-      choices_in_prompt: false
+      choices_in_prompt: true
       languages:
       - en
       metrics:

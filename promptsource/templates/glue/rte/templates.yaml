@@ -38,8 +38,33 @@ templates:
       original_task: true
     name: "does the claim\u2026 follow the fact\u2026"
     reference: ''
+  56b7e9ef-bbad-4559-85b5-309f2935d415: !Template
+    answer_choices: no ||| yes
+    id: 56b7e9ef-bbad-4559-85b5-309f2935d415
+    jinja: 'We say that one sentence "{{"entails"}}" another sentence when the first
+      sentence implies the second sentence. Consider the following two sentences:
+
+      {{sentence1}}
+
+      {{sentence2}}
+
+      Is the relationship from the first to the second sentence "{{"not entailment"}}"?
+      Please choose from yes or no.
+
+      |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - en
+      metrics:
+      - Accuracy
+      original_task: true
+    name: not_entailment explained
+    reference: ''
   9e2b4267-ec23-44c8-b82a-107e2c890fec: !Template
-    answer_choices: entailment ||| not entailment
+    answer_choices: yes ||| no
     id: 9e2b4267-ec23-44c8-b82a-107e2c890fec
     jinja: 'We say that one sentence "{{"entails"}}" another sentence when the first
       sentence implies the second sentence. Consider the following two sentences:
@@ -48,8 +73,8 @@ templates:
 
       {{sentence2}}
 
-      Is the relationship from the first to the second sentence "{{"entailment"}}"
-      or "{{"not entailment"}}"?
+      Is the relationship from the first to the second sentence "{{"entailment"}}"?
+      Please choose from yes or no.
 
       |||
 

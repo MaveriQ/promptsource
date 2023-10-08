@@ -53,7 +53,8 @@ templates:
 
       {{sentence1}}
 
-      paraphrase (that is, mean the same thing as) this sentence?
+      paraphrase (that is, mean the same thing as) this sentence? Pick from yes or
+      no.
 
       {{sentence2}}
 
@@ -61,7 +62,7 @@ templates:
 
       {{ answer_choices[label] }}'
     metadata: !TemplateMetadata
-      choices_in_prompt: false
+      choices_in_prompt: true
       languages:
       - en
       metrics:
@@ -70,13 +71,15 @@ templates:
     name: paraphrase
     reference: ''
   bbb395c2-2c70-4eaa-ad2f-2cf18a81da93: !Template
-    answer_choices: not equivalent ||| equivalent
+    answer_choices: no ||| yes
     id: bbb395c2-2c70-4eaa-ad2f-2cf18a81da93
-    jinja: 'Are the following two sentences "{{"equivalent"}}" or "{{"not equivalent"}}"?
+    jinja: 'Are the following two sentences "{{"equivalent"}}"?
 
       {{sentence1}}
 
       {{sentence2}}
+
+      Pick from yes or no.
 
       |||
 
@@ -123,13 +126,13 @@ templates:
 
       {{sentence2}}
 
-      and have it mean the same thing?
+      and have it mean the same thing? yes or no?
 
       |||
 
       {{ answer_choices[label] }}'
     metadata: !TemplateMetadata
-      choices_in_prompt: false
+      choices_in_prompt: true
       languages:
       - en
       metrics:

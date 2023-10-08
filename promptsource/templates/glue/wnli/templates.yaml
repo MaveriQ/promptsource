@@ -2,17 +2,17 @@ dataset: glue
 subset: wnli
 templates:
   10c354ee-6f4e-4b04-91e1-29e999a8f3e7: !Template
-    answer_choices: not confident ||| very confident
+    answer_choices: no ||| yes
     id: 10c354ee-6f4e-4b04-91e1-29e999a8f3e7
     jinja: 'If it''s true that
 
       {{sentence1}}
 
-      how {{"confident"}} should I be that
+      should I be {{"confident"}} that
 
       {{sentence2}}
 
-      {{"very confident or not confident?"}}
+      {{"Please select from yes or no?"}}
 
       |||
 
@@ -36,11 +36,13 @@ templates:
 
       {{sentence2}}
 
+      Please select yes or no.
+
       |||
 
       {{answer_choices[label]}}'
     metadata: !TemplateMetadata
-      choices_in_prompt: false
+      choices_in_prompt: true
       languages:
       - en
       metrics:
@@ -55,13 +57,13 @@ templates:
 
       {{sentence1}}
 
-      Does this mean that "{{sentence2}}"?
+      Does this mean that "{{sentence2}}"? Please select from "yes" or "no"
 
       |||
 
       {{answer_choices[label]}}'
     metadata: !TemplateMetadata
-      choices_in_prompt: false
+      choices_in_prompt: true
       languages:
       - en
       metrics:
@@ -73,13 +75,13 @@ templates:
     answer_choices: no ||| yes
     id: a244158a-a248-4e34-bef7-66e269dd0815
     jinja: 'Someone told me "{{sentence1}}" Now, I think that "{{sentence2}}" Am I
-      justified in thinking this?
+      justified in thinking this? yes or no?
 
       |||
 
       {{answer_choices[label]}}'
     metadata: !TemplateMetadata
-      choices_in_prompt: false
+      choices_in_prompt: true
       languages:
       - en
       metrics:
@@ -94,13 +96,13 @@ templates:
 
       {{sentence2}}
 
-      Does the first sentence imply the second sentence?
+      Does the first sentence imply the second sentence? yes or no?
 
       |||
 
       {{answer_choices[label]}}'
     metadata: !TemplateMetadata
-      choices_in_prompt: false
+      choices_in_prompt: true
       languages:
       - en
       metrics:
