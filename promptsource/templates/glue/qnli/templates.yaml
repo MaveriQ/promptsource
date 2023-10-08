@@ -6,19 +6,20 @@ templates:
     id: 50c3108c-b23c-4691-97be-72438606c840
     jinja: '{{sentence}}
 
-      Does that sentence have all you need to answer the question "{{question}}"?
+      Does that sentence give you all the information to answer the question "{{question}}"?
+      Please answer yes or no.
 
       |||
 
       {{answer_choices[label]}}'
     metadata: !TemplateMetadata
-      choices_in_prompt: false
+      choices_in_prompt: true
       languages:
       - en
       metrics:
       - Accuracy
       original_task: true
-    name: have all you need
+    name: give you all the information
     reference: ''
   5f0f24d9-14a7-4588-8dc2-494b4c693b81: !Template
     answer_choices: yes ||| no
@@ -27,11 +28,13 @@ templates:
 
       {{sentence}}
 
+      Please answer yes or no
+
       |||
 
       {{answer_choices[label]}}'
     metadata: !TemplateMetadata
-      choices_in_prompt: false
+      choices_in_prompt: true
       languages:
       - en
       metrics:
@@ -42,13 +45,14 @@ templates:
   c626350d-6c0e-47be-b09e-c9ba1446b027: !Template
     answer_choices: yes ||| no
     id: c626350d-6c0e-47be-b09e-c9ba1446b027
-    jinja: 'Does knowing that "{{sentence}}" imply that I know the answer to "{{question}}"
+    jinja: 'Does knowing that "{{sentence}}" imply that I know the answer to "{{question}}".
+      Select from yes or no.
 
       |||
 
       {{answer_choices[label]}}'
     metadata: !TemplateMetadata
-      choices_in_prompt: false
+      choices_in_prompt: true
       languages:
       - en
       metrics:
@@ -64,13 +68,13 @@ templates:
       {{question}}
 
       All the background I''m provided with is that "{{sentence}}". Is that enough
-      to answer the question?
+      to answer the question? select yes or no.
 
       |||
 
       {{answer_choices[label]}}'
     metadata: !TemplateMetadata
-      choices_in_prompt: false
+      choices_in_prompt: true
       languages:
       - en
       metrics:

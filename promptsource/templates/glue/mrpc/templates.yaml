@@ -32,7 +32,7 @@ templates:
 
       {{sentence2}}
 
-      Do they?
+      Do they? yes or no.
 
       |||
 
@@ -53,10 +53,11 @@ templates:
 
       {{sentence1}}
 
-      paraphrase (that is, mean the same thing as) this sentence? Pick from yes or
-      no.
+      paraphrase (that is, mean the same thing as) this sentence?
 
       {{sentence2}}
+
+      Pick from yes or no.
 
       |||
 
@@ -148,6 +149,8 @@ templates:
       {{sentence1}}
 
       {{sentence2}}
+
+      Pick from yes or no.
 
       |||
 
