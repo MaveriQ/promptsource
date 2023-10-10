@@ -57,8 +57,8 @@ templates:
   6dd74cd5-e074-4612-9e96-c17ca88c3bc4: !Template
     answer_choices: yes ||| no
     id: 6dd74cd5-e074-4612-9e96-c17ca88c3bc4
-    jinja: Someone sent me an email with the sentence "{{sentence}}". Do you think
-      they are feeling {{"bad"}}? yes or no? ||| {{ answer_choices[label] }}
+    jinja: "Someone sent me an email with the sentence \"{{sentence}}\". Do you think\
+      \ they are feeling bad? yes or no? \n||| \n{{ answer_choices[label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       languages:

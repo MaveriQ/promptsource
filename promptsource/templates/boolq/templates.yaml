@@ -1,0 +1,40 @@
+dataset: boolq
+templates:
+  2793cf8e-3f89-45e0-9bf1-d68e2a493150: !Template
+    answer_choices: true ||| false
+    id: 2793cf8e-3f89-45e0-9bf1-d68e2a493150
+    jinja: 'Based on the following passage, please answer the question:
+
+      passage : {{passage}}
+
+      question : {{question}}
+
+      Please choose true or false'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - en
+      metrics:
+      - Accuracy
+      original_task: true
+    name: based_on_passage
+    reference: ''
+  421967bf-547b-4344-8d7a-a3875c07d245: !Template
+    answer_choices: yes ||| no
+    id: 421967bf-547b-4344-8d7a-a3875c07d245
+    jinja: 'question: {{question}}
+
+      Can we answer the above question based on the following passage:
+
+      passage: {{passage}}
+
+      choose yes or no'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - en
+      metrics:
+      - Accuracy
+      original_task: true
+    name: answer_above_question
+    reference: ''

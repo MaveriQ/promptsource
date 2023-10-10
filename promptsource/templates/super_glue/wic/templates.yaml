@@ -25,29 +25,6 @@ templates:
       original_task: true
     name: question-context-meaning-with-label
     reference: Generalized question-context format with label
-  3503ead5-4fa5-4f77-95dc-f0c2ed3eecdc: !Template
-    answer_choices: No ||| Yes
-    id: 3503ead5-4fa5-4f77-95dc-f0c2ed3eecdc
-    jinja: 'Does the word "{{word}}" have the same meaning in these two sentences?
-
-      {{sentence1}}
-
-      {{sentence2}}
-
-      ||| {% if label != -1%}
-
-      {{answer_choices[label]}}
-
-      {% endif %}'
-    metadata: !TemplateMetadata
-      choices_in_prompt: false
-      languages:
-      - en
-      metrics:
-      - Accuracy
-      original_task: true
-    name: question-context-meaning
-    reference: Generalized question-context format
   611d13dc-d414-4b9b-9204-e4f325e859e7: !Template
     answer_choices: No ||| Yes
     id: 611d13dc-d414-4b9b-9204-e4f325e859e7
@@ -99,30 +76,6 @@ templates:
       original_task: true
     name: affirmation_true_or_false
     reference: ''
-  c3a0a5d8-cfe9-4a7f-8a3c-3c526e0ad0c6: !Template
-    answer_choices: No ||| Yes
-    id: c3a0a5d8-cfe9-4a7f-8a3c-3c526e0ad0c6
-    jinja: '{{sentence1}}
-
-      {{sentence2}}
-
-      Question: Is the word ''{{word}}'' used in the same sense in the two sentences
-      above?
-
-      ||| {% if label != -1%}
-
-      {{answer_choices[label]}}
-
-      {% endif %}'
-    metadata: !TemplateMetadata
-      choices_in_prompt: false
-      languages:
-      - en
-      metrics:
-      - Accuracy
-      original_task: true
-    name: GPT-3-prompt
-    reference: Following table G32. https://arxiv.org/pdf/2005.14165.pdf
   ce8b5a93-1841-4897-84db-b100f1c84f4b: !Template
     answer_choices: No ||| Yes
     id: ce8b5a93-1841-4897-84db-b100f1c84f4b
@@ -213,26 +166,3 @@ templates:
       original_task: true
     name: polysemous
     reference: ''
-  f934a96d-fe4d-4075-aa47-5595b9a604c7: !Template
-    answer_choices: No ||| Yes
-    id: f934a96d-fe4d-4075-aa47-5595b9a604c7
-    jinja: '{{sentence1}}
-
-      {{sentence2}}
-
-      Similar sense of {{word}}?
-
-      ||| {% if label != -1%}
-
-      {{answer_choices[label]}}
-
-      {% endif %}'
-    metadata: !TemplateMetadata
-      choices_in_prompt: false
-      languages:
-      - en
-      metrics:
-      - Accuracy
-      original_task: true
-    name: similar-sense
-    reference: Following https://arxiv.org/abs/2105.11447, https://github.com/ethanjperez/true_few_shot/tree/main/templates.super_glue

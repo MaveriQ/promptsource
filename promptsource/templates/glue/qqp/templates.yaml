@@ -20,8 +20,9 @@ templates:
   a45ad5cd-a3ba-4ab2-a728-a9ea0f27102b: !Template
     answer_choices: no ||| yes
     id: a45ad5cd-a3ba-4ab2-a728-a9ea0f27102b
-    jinja: Are the questions "{{question1}}" and "{{question2}}" asking the same thing?
-      yes or no. ||| {{ answer_choices[label] }}
+    jinja: "Are the following two questions asking the same thing? yes or no.\nquestion\
+      \ 1 : \"{{question1}}\"\nquestion 2: \"{{question2}}\"  ||| \n{{ answer_choices[label]\
+      \ }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       languages:
@@ -34,8 +35,8 @@ templates:
   c0182cd1-c7ac-4abe-829f-4651536af951: !Template
     answer_choices: no ||| yes
     id: c0182cd1-c7ac-4abe-829f-4651536af951
-    jinja: Can an answer to "{{question1}}" also be used to answer "{{question2}}"?
-      Pick from yes or no. ||| {{ answer_choices[label] }}
+    jinja: Can an answer to the question "{{question1}}" also be used to answer the
+      question "{{question2}}"? yes or no. ||| {{ answer_choices[label] }}
     metadata: !TemplateMetadata
       choices_in_prompt: true
       languages:

@@ -1,20 +1,6 @@
 dataset: glue
 subset: mnli
 templates:
-  02b4c44e-52cb-417b-b069-5d334b1f1a91: !Template
-    answer_choices: Always ||| Sometimes ||| Never
-    id: 02b4c44e-52cb-417b-b069-5d334b1f1a91
-    jinja: Suppose it's true that {{premise}} Then, is "{{hypothesis}}" {{"always"}},
-      {{"sometimes"}}, or {{"never"}} true? ||| {{ answer_choices[label] }}
-    metadata: !TemplateMetadata
-      choices_in_prompt: true
-      languages:
-      - en
-      metrics:
-      - Accuracy
-      original_task: true
-    name: always/sometimes/never
-    reference: Sanh et al. 2021
   05bd28f7-3ff0-4a01-ad7d-d956d0f70209: !Template
     answer_choices: Yes ||| Maybe ||| No
     id: 05bd28f7-3ff0-4a01-ad7d-d956d0f70209
@@ -32,7 +18,7 @@ templates:
   08948221-175f-43b2-8515-a5a29d8a82de: !Template
     answer_choices: Yes ||| Maybe ||| No
     id: 08948221-175f-43b2-8515-a5a29d8a82de
-    jinja: '{{premise}} Are we justified in saying that "{{hypothesis}}"? Yes, no,
+    jinja: '{{premise}} Are we justified in saying that "{{hypothesis}}"? yes, no,
       or maybe? ||| {{ answer_choices[label] }} '
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -61,11 +47,11 @@ templates:
     reference: 'Same as reported in Figure G7 of the GPT-3 paper, except that there
       is no task identifying tokens like "anli R1: ".'
   3df92937-de3f-45a4-8a8c-69bb78cb1a7b: !Template
-    answer_choices: Correct ||| Inconclusive ||| Incorrect
+    answer_choices: Correct ||| maybe ||| Incorrect
     id: 3df92937-de3f-45a4-8a8c-69bb78cb1a7b
     jinja: '{{premise}} Using only the above description and what you know about the
-      world, "{{hypothesis}}" is definitely correct, incorrect, or inconclusive? |||
-      {{ answer_choices[label] }}'
+      world, "{{hypothesis}}" is definitely correct, incorrect, or maybe? ||| {{ answer_choices[label]
+      }}'
     metadata: !TemplateMetadata
       choices_in_prompt: true
       languages:
@@ -103,21 +89,6 @@ templates:
       original_task: true
     name: can we infer
     reference: Webson & Pavlick 2021
-  7729660d-a228-4558-80a8-8cf27de597db: !Template
-    answer_choices: Always ||| Sometimes ||| Never
-    id: 7729660d-a228-4558-80a8-8cf27de597db
-    jinja: "{{premise}} \n\nKeeping in mind the above text, consider: {{hypothesis}}\
-      \ Is this {{\"always\"}}, {{\"sometimes\"}}, or {{\"never\"}} correct? ||| {{\
-      \ answer_choices[label] }}"
-    metadata: !TemplateMetadata
-      choices_in_prompt: true
-      languages:
-      - en
-      metrics:
-      - Accuracy
-      original_task: true
-    name: consider always/sometimes/never
-    reference: Sanh et al. 2021
   7a712469-7e78-4e0b-81a4-86e338700d89: !Template
     answer_choices: Yes ||| Maybe ||| No
     id: 7a712469-7e78-4e0b-81a4-86e338700d89
@@ -145,37 +116,6 @@ templates:
       - Accuracy
       original_task: true
     name: does this imply
-    reference: Sanh et al. 2021
-  8df06939-7331-466e-9a0b-ad1b86f4bf1f: !Template
-    answer_choices: True ||| Inconclusive ||| False
-    id: 8df06939-7331-466e-9a0b-ad1b86f4bf1f
-    jinja: '{{premise}} Based on that information, is the claim: "{{hypothesis}}"
-      {{"true"}}, {{"false"}}, or {{"inconclusive"}}? ||| {{ answer_choices[label]
-      }}'
-    metadata: !TemplateMetadata
-      choices_in_prompt: true
-      languages:
-      - en
-      metrics:
-      - Accuracy
-      original_task: true
-    name: claim true/false/inconclusive
-    reference: Sanh et al. 2021
-  9a26a741-b000-4844-bd7a-a2226e81ee89: !Template
-    answer_choices: True ||| Inconclusive ||| False
-    id: 9a26a741-b000-4844-bd7a-a2226e81ee89
-    jinja: 'Take the following as truth: {{premise}}
-
-      Then the following statement: "{{hypothesis}}" is {{"true"}}, {{"false"}}, or
-      {{"inconclusive"}}? ||| {{ answer_choices[label] }}'
-    metadata: !TemplateMetadata
-      choices_in_prompt: true
-      languages:
-      - en
-      metrics:
-      - Accuracy
-      original_task: true
-    name: take the following as truth
     reference: Sanh et al. 2021
   aaddd2e0-ba82-4d8c-8545-0db7c36b535a: !Template
     answer_choices: Yes ||| Maybe ||| No
@@ -205,18 +145,3 @@ templates:
       original_task: true
     name: guaranteed true
     reference: Webson & Pavlick 2021
-  e418db47-d2e0-4cd7-9e43-8b443d3b0f6d: !Template
-    answer_choices: Guaranteed ||| Possible ||| Impossible
-    id: e418db47-d2e0-4cd7-9e43-8b443d3b0f6d
-    jinja: "Assume it is true that {{premise}} \n\nTherefore, \"{{hypothesis}}\" is\
-      \ {{\"guaranteed\"}}, {{\"possible\"}}, or {{\"impossible\"}}? ||| {{ answer_choices[label]\
-      \ }}"
-    metadata: !TemplateMetadata
-      choices_in_prompt: true
-      languages:
-      - en
-      metrics:
-      - Accuracy
-      original_task: true
-    name: guaranteed/possible/impossible
-    reference: Sanh et al. 2021
