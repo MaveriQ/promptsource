@@ -6,13 +6,13 @@ templates:
     id: 03a7ae07-5ddd-46c4-92f3-2152223d44ec
     jinja: '{{sentence1}}
 
-      Does this mean that "{{sentence2}}" is true?  yes or no.
+      Does this mean that "{{sentence2}}" is true?
 
       |||
 
       {{answer_choices[label]}}'
     metadata: !TemplateMetadata
-      choices_in_prompt: true
+      choices_in_prompt: false
       languages:
       - en
       metrics:
@@ -24,13 +24,12 @@ templates:
     answer_choices: yes ||| no
     id: 4ee6ff27-de63-4e7b-a9d4-82a17eba407a
     jinja: 'Does the claim "{{sentence2}}" follow from the fact that "{{sentence1}}"?
-      Please answer {{"yes"}} or {{"no"}}.
 
       |||
 
       {{answer_choices[label]}}'
     metadata: !TemplateMetadata
-      choices_in_prompt: true
+      choices_in_prompt: false
       languages:
       - en
       metrics:
@@ -49,7 +48,6 @@ templates:
       {{sentence2}}
 
       Is the relationship from the first to the second sentence "{{"not entailment"}}"?
-      Please choose from yes or no.
 
       |||
 
@@ -74,13 +72,12 @@ templates:
       {{sentence2}}
 
       Is the relationship from the first to the second sentence "{{"entailment"}}"?
-      Please choose from yes or no.
 
       |||
 
       {{answer_choices[label]}}'
     metadata: !TemplateMetadata
-      choices_in_prompt: true
+      choices_in_prompt: false
       languages:
       - en
       metrics:
@@ -91,8 +88,7 @@ templates:
   c8dfc879-40f2-412d-be1e-4cd70107f6e6: !Template
     answer_choices: yes ||| no
     id: c8dfc879-40f2-412d-be1e-4cd70107f6e6
-    jinja: 'Does "{{sentence1}}" imply that "{{sentence2}}"? Please answer {{"yes"}}
-      or {{"no"}}.
+    jinja: 'Does "{{sentence1}}" imply that "{{sentence2}}"?
 
       |||
 
@@ -114,8 +110,6 @@ templates:
       Does this imply
 
       {{sentence2}}
-
-      Please answer yes or no.
 
       |||
 

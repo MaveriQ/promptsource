@@ -6,19 +6,17 @@ templates:
     id: 10c354ee-6f4e-4b04-91e1-29e999a8f3e7
     jinja: 'If it''s true that
 
-      {{sentence1}}
+      "{{sentence1}}"
 
-      should I be {{"confident"}} that
+      should I be "confident" that
 
-      {{sentence2}}
-
-      {{"Please select from yes or no?"}}
+      "{{sentence2}}"
 
       |||
 
       {{answer_choices[label]}}'
     metadata: !TemplateMetadata
-      choices_in_prompt: true
+      choices_in_prompt: false
       languages:
       - en
       metrics:
@@ -29,14 +27,12 @@ templates:
   3a0e46cb-0b96-4972-83f6-29a6c6a09ba9: !Template
     answer_choices: no ||| yes
     id: 3a0e46cb-0b96-4972-83f6-29a6c6a09ba9
-    jinja: '{{"Entailment"}} means that the second sentence follows from the first
-      sentence. Are the following two sentences an example of entailment?
+    jinja: '"Entailment" means that the second sentence follows from the first sentence.
+      Are the following two sentences an example of entailment?
 
-      {{sentence1}}
+      First Sentence : "{{sentence1}}"
 
-      {{sentence2}}
-
-      Please select yes or no.
+      Second Sentence : "{{sentence2}}"
 
       |||
 
@@ -53,17 +49,10 @@ templates:
   75f89b05-5a81-401b-8a04-8239211a9a95: !Template
     answer_choices: no ||| yes
     id: 75f89b05-5a81-401b-8a04-8239211a9a95
-    jinja: 'Assume that the following is true:
-
-      {{sentence1}}
-
-      Does this mean that "{{sentence2}}"? Please select from "yes" or "no"
-
-      |||
-
-      {{answer_choices[label]}}'
+    jinja: "Assume that the following is true:\n{{sentence1}}\n\nDoes this mean that\
+      \ \"{{sentence2}}\"? \n|||\n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
-      choices_in_prompt: true
+      choices_in_prompt: false
       languages:
       - en
       metrics:
@@ -74,14 +63,10 @@ templates:
   a244158a-a248-4e34-bef7-66e269dd0815: !Template
     answer_choices: no ||| yes
     id: a244158a-a248-4e34-bef7-66e269dd0815
-    jinja: 'Someone told me "{{sentence1}}" Now, I think that "{{sentence2}}" Am I
-      justified in thinking this? yes or no?
-
-      |||
-
-      {{answer_choices[label]}}'
+    jinja: "Someone told me \"{{sentence1}}\" Now, I think that \"{{sentence2}}\"\
+      \ Am I justified in thinking this? \n|||\n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
-      choices_in_prompt: true
+      choices_in_prompt: false
       languages:
       - en
       metrics:
@@ -92,17 +77,17 @@ templates:
   a2ce492b-dfd0-4f04-bc44-70c7867ba231: !Template
     answer_choices: no ||| yes
     id: a2ce492b-dfd0-4f04-bc44-70c7867ba231
-    jinja: '{{sentence1}}
+    jinja: '"{{sentence1}}"
 
-      {{sentence2}}
+      "{{sentence2}}"
 
-      Does the first sentence imply the second sentence? yes or no?
+      Does the first sentence imply the second sentence?
 
       |||
 
       {{answer_choices[label]}}'
     metadata: !TemplateMetadata
-      choices_in_prompt: true
+      choices_in_prompt: false
       languages:
       - en
       metrics:

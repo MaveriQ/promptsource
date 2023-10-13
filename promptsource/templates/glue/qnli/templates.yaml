@@ -7,13 +7,12 @@ templates:
     jinja: '{{sentence}}
 
       Does that sentence give you all the information to answer the question "{{question}}"?
-      Please answer yes or no.
 
       |||
 
       {{answer_choices[label]}}'
     metadata: !TemplateMetadata
-      choices_in_prompt: true
+      choices_in_prompt: false
       languages:
       - en
       metrics:
@@ -28,13 +27,11 @@ templates:
 
       {{sentence}}
 
-      Please answer yes or no
-
       |||
 
       {{answer_choices[label]}}'
     metadata: !TemplateMetadata
-      choices_in_prompt: true
+      choices_in_prompt: false
       languages:
       - en
       metrics:
@@ -46,13 +43,12 @@ templates:
     answer_choices: yes ||| no
     id: c626350d-6c0e-47be-b09e-c9ba1446b027
     jinja: 'Does knowing that "{{sentence}}" imply that I know the answer to "{{question}}".
-      Select from yes or no.
 
       |||
 
       {{answer_choices[label]}}'
     metadata: !TemplateMetadata
-      choices_in_prompt: true
+      choices_in_prompt: false
       languages:
       - en
       metrics:
@@ -68,13 +64,13 @@ templates:
       {{question}}
 
       All the background I''m provided with is that "{{sentence}}". Is that enough
-      to answer the question? select yes or no.
+      to answer the question?
 
       |||
 
       {{answer_choices[label]}}'
     metadata: !TemplateMetadata
-      choices_in_prompt: true
+      choices_in_prompt: false
       languages:
       - en
       metrics:
@@ -94,13 +90,13 @@ templates:
       {{question}}
 
       Is it possible to answer this question based only on the information in the
-      passage? {{"A) yes"}} or {{"B) no"}}
+      passage?
 
       |||
 
       {{answer_choices[label]}}'
     metadata: !TemplateMetadata
-      choices_in_prompt: true
+      choices_in_prompt: false
       languages:
       - en
       metrics:

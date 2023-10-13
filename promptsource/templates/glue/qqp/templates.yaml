@@ -6,10 +6,10 @@ templates:
     id: 8e711799-a57c-4941-833b-466bedfb80ad
     jinja: I'm an administrator on the website Quora. There are two posts, one that
       asks "{{question1}}" and another that asks "{{question2}}". I can merge questions
-      if they are asking the same thing. Can I merge these two questions? Pick from
-      yes or no. ||| {{ answer_choices[label] }}
+      if they are asking the same thing. Can I merge these two questions? ||| {{ answer_choices[label]
+      }}
     metadata: !TemplateMetadata
-      choices_in_prompt: true
+      choices_in_prompt: false
       languages:
       - en
       metrics:
@@ -20,11 +20,11 @@ templates:
   a45ad5cd-a3ba-4ab2-a728-a9ea0f27102b: !Template
     answer_choices: no ||| yes
     id: a45ad5cd-a3ba-4ab2-a728-a9ea0f27102b
-    jinja: "Are the following two questions asking the same thing? yes or no.\nquestion\
-      \ 1 : \"{{question1}}\"\nquestion 2: \"{{question2}}\"  ||| \n{{ answer_choices[label]\
+    jinja: "Are the following two questions asking the same thing?\nquestion 1 : \"\
+      {{question1}}\"\nquestion 2: \"{{question2}}\"  ||| \n{{ answer_choices[label]\
       \ }}"
     metadata: !TemplateMetadata
-      choices_in_prompt: true
+      choices_in_prompt: false
       languages:
       - en
       metrics:
@@ -36,9 +36,9 @@ templates:
     answer_choices: no ||| yes
     id: c0182cd1-c7ac-4abe-829f-4651536af951
     jinja: Can an answer to the question "{{question1}}" also be used to answer the
-      question "{{question2}}"? yes or no. ||| {{ answer_choices[label] }}
+      question "{{question2}}"? ||| {{ answer_choices[label] }}
     metadata: !TemplateMetadata
-      choices_in_prompt: true
+      choices_in_prompt: false
       languages:
       - en
       metrics:
@@ -54,9 +54,9 @@ templates:
       Question 2: {{question2}}
 
 
-      Do these two questions convey the same meaning? yes or no? ||| {{answer_choices[label]}}'
+      Do these two questions convey the same meaning? ||| {{answer_choices[label]}}'
     metadata: !TemplateMetadata
-      choices_in_prompt: true
+      choices_in_prompt: false
       languages:
       - en
       metrics:
@@ -68,9 +68,9 @@ templates:
     answer_choices: no ||| yes
     id: fd244bd3-ca3b-4e4f-9722-fd006c50e157
     jinja: I received the questions "{{question1}}" and "{{question2}}". Are they
-      duplicates? Pick from yes or no.||| {{ answer_choices[label] }}
+      duplicates? ||| {{ answer_choices[label] }}
     metadata: !TemplateMetadata
-      choices_in_prompt: true
+      choices_in_prompt: false
       languages:
       - en
       metrics:

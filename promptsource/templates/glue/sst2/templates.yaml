@@ -4,15 +4,10 @@ templates:
   1ee552d1-c275-4400-bbd5-a4a51fb6f3fe: !Template
     answer_choices: yes ||| no
     id: 1ee552d1-c275-4400-bbd5-a4a51fb6f3fe
-    jinja: 'Does the following sentence have a negative sentiment? yes or no.
-
-      {{sentence}}
-
-      |||
-
-      {{ answer_choices[label] }}'
+    jinja: "Does the following sentence have a negative sentiment? \n{{sentence}}\n\
+      |||\n{{ answer_choices[label] }}"
     metadata: !TemplateMetadata
-      choices_in_prompt: true
+      choices_in_prompt: false
       languages:
       - en
       metrics:
@@ -26,10 +21,9 @@ templates:
     jinja: 'I''m reading a review that says "{{sentence}}".
 
 
-      Do you think the review is {{"positive"}}? Please select yes or no. ||| {{ answer_choices[label]
-      }}'
+      Do you think the review is {{"positive"}}? ||| {{ answer_choices[label] }}'
     metadata: !TemplateMetadata
-      choices_in_prompt: true
+      choices_in_prompt: false
       languages:
       - en
       metrics:
@@ -43,10 +37,9 @@ templates:
     jinja: 'Someone just said to me "{{sentence}}".
 
 
-      Do you think they are {{"sad"}}? Please select yes or no. ||| {{ answer_choices[label]
-      }}'
+      Do you think they are {{"sad"}}? ||| {{ answer_choices[label] }}'
     metadata: !TemplateMetadata
-      choices_in_prompt: true
+      choices_in_prompt: false
       languages:
       - en
       metrics:
@@ -58,9 +51,9 @@ templates:
     answer_choices: yes ||| no
     id: 6dd74cd5-e074-4612-9e96-c17ca88c3bc4
     jinja: "Someone sent me an email with the sentence \"{{sentence}}\". Do you think\
-      \ they are feeling bad? yes or no? \n||| \n{{ answer_choices[label] }}"
+      \ they are feeling bad?\n||| \n{{ answer_choices[label] }}"
     metadata: !TemplateMetadata
-      choices_in_prompt: true
+      choices_in_prompt: false
       languages:
       - en
       metrics:
@@ -74,10 +67,9 @@ templates:
     jinja: 'Someone just said to me "{{sentence}}".
 
 
-      Do you think they are {{"happy"}}? Please select yes or no. ||| {{ answer_choices[label]
-      }}'
+      Do you think they are {{"happy"}}? ||| {{ answer_choices[label] }}'
     metadata: !TemplateMetadata
-      choices_in_prompt: true
+      choices_in_prompt: false
       languages:
       - en
       metrics:
@@ -88,7 +80,7 @@ templates:
   8514b7e7-aa14-4895-a11b-2c60d5249d21: !Template
     answer_choices: no ||| yes
     id: 8514b7e7-aa14-4895-a11b-2c60d5249d21
-    jinja: 'Does the following sentence have a positive sentiment? Select yes or no.
+    jinja: 'Does the following sentence have a positive sentiment?
 
       {{sentence}}
 
@@ -107,13 +99,10 @@ templates:
   a41ed4b1-dbfa-46fa-b661-a4ca9d3bbb01: !Template
     answer_choices: yes ||| no
     id: a41ed4b1-dbfa-46fa-b661-a4ca9d3bbb01
-    jinja: 'I''m reading a review that says "{{sentence}}".
-
-
-      Do you think the review is {{"negative"}}? Please select yes or no.  ||| {{
-      answer_choices[label] }}'
+    jinja: "I'm reading a review that says \"{{sentence}}\".\n\nDo you think the review\
+      \ is {{\"negative\"}}? \n||| {{ answer_choices[label] }}"
     metadata: !TemplateMetadata
-      choices_in_prompt: true
+      choices_in_prompt: false
       languages:
       - en
       metrics:
@@ -124,10 +113,10 @@ templates:
   aafc6802-3da1-47ff-91e8-b4d8946c9958: !Template
     answer_choices: no ||| yes
     id: aafc6802-3da1-47ff-91e8-b4d8946c9958
-    jinja: Someone sent me an email with the sentence "{{sentence}}". Do you think
-      they are feeling {{"good"}}? yes or no? ||| {{ answer_choices[label] }}
+    jinja: "Someone sent me an email with the sentence \"{{sentence}}\". Do you think\
+      \ they are feeling {{\"good\"}}? \n||| {{ answer_choices[label] }}"
     metadata: !TemplateMetadata
-      choices_in_prompt: true
+      choices_in_prompt: false
       languages:
       - en
       metrics:

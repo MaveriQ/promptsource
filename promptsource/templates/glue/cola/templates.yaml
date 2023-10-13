@@ -4,8 +4,7 @@ templates:
   1d3f5f15-8128-4445-8de5-92365b7e54a8: !Template
     answer_choices: no ||| yes
     id: 1d3f5f15-8128-4445-8de5-92365b7e54a8
-    jinja: 'Does the following sentence makes sense and uses correct English? Please
-      answer {{"yes"}} or {{"no"}}.
+    jinja: 'Does the following sentence makes sense and uses correct English?.
 
       {{sentence}}
 
@@ -13,7 +12,7 @@ templates:
 
       {{ answer_choices[label] }}'
     metadata: !TemplateMetadata
-      choices_in_prompt: true
+      choices_in_prompt: false
       languages:
       - en
       metrics:
@@ -22,7 +21,7 @@ templates:
     name: Makes sense yes no
     reference: ''
   39a701ff-bb4b-48ac-8c0a-8c61bf0d4b8d: !Template
-    answer_choices: No ||| Yes
+    answer_choices: no ||| yes
     id: 39a701ff-bb4b-48ac-8c0a-8c61bf0d4b8d
     jinja: '{{sentence}}
 
@@ -44,7 +43,7 @@ templates:
     answer_choices: no ||| yes
     id: 5a09f9b0-895a-46c7-931b-d9f6060bce87
     jinja: 'A sentence is acceptable if it is grammatically correct and makes sense.
-      Is the following sentence acceptable? Select yes or no.
+      Is the following sentence acceptable?
 
       {{sentence}}
 
@@ -52,7 +51,7 @@ templates:
 
       {{ answer_choices[label] }}'
     metadata: !TemplateMetadata
-      choices_in_prompt: true
+      choices_in_prompt: false
       languages:
       - en
       metrics:
@@ -68,8 +67,7 @@ templates:
 
       {{sentence}}
 
-      Does this sentence make sense and is it grammatically correct? Please answer
-      {{"yes or no"}}.
+      Does this sentence make sense and is it grammatically correct?
 
       |||
 
@@ -89,7 +87,7 @@ templates:
     jinja: '{{sentence}}
 
       I''m worried that sentence didn''t make any sense, or was grammatically incorrect.
-      Was it correct? yes or no.
+      Was it correct?
 
       |||
 

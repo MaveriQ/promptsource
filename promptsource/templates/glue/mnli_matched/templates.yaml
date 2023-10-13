@@ -135,12 +135,10 @@ templates:
   dcca5858-794b-4bfd-bc7d-f81e10b4b082: !Template
     answer_choices: True ||| Neither ||| False
     id: dcca5858-794b-4bfd-bc7d-f81e10b4b082
-    jinja: '{{premise}}
-
-      Question: {{hypothesis}} True, False, or Neither? ||| {{ answer_choices[label]
-      }}'
+    jinja: "Premise: {{premise}}\nQuestion: {{hypothesis}} \n||| {{ answer_choices[label]\
+      \ }}"
     metadata: !TemplateMetadata
-      choices_in_prompt: true
+      choices_in_prompt: false
       languages:
       - en
       metrics:
