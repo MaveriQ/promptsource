@@ -16,7 +16,6 @@ from pygments.formatters import HtmlFormatter
 from pygments.lexers import DjangoLexer
 
 from promptsource import DEFAULT_PROMPTSOURCE_CACHE_HOME
-from promptsource.session import _get_state
 from promptsource.templates import INCLUDED_USERS, LANGUAGES, METRICS, DatasetTemplates, Template, TemplateCollection
 from promptsource.utils import (
     get_dataset,
@@ -97,7 +96,7 @@ def run_app():
     #
     # Loads session state
     #
-    state = _get_state()
+    state = st.session_state
 
     def reset_template_state():
         state.template_name = None
